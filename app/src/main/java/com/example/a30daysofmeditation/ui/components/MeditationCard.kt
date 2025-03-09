@@ -62,14 +62,7 @@ fun MeditationCard(
     )
 
     Card(
-        modifier = modifier
-            .fillMaxWidth()
-            .animateContentSize(
-                animationSpec = spring(
-                    dampingRatio = Spring.DampingRatioMediumBouncy,
-                    stiffness = Spring.StiffnessLow
-                )
-            ),
+        modifier = modifier,
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(
             containerColor = backgroundColor
@@ -82,7 +75,9 @@ fun MeditationCard(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(16.dp)
+                .animateContentSize()
         ) {
+            // Header row with expand/collapse functionality
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
